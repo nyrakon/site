@@ -1,0 +1,28 @@
+html {
+    --primary-color: rgb(5, 255, 176);
+    --secondary: rgb(7, 172, 120);
+    
+    height: 100%;
+}
+body {height: fit-content}
+.sep1 {
+    display:block; height: 24px; width: 100%
+}
+.sep2 {
+    display:block; height: 6px; width: 100%
+}
+.content {
+    height: fit-content; align-items: center;
+}
+.highlight {
+    color: yellow
+}
+li {
+    color: gray;
+}
+a {
+    color: var(--secondary); 
+}
+.topbar {
+    width: 100%; height: fit-content; overflow: hidden;
+}
