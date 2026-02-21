@@ -5,6 +5,6 @@ settings=dotenv_values("../.env") # < env path is outside html
 version=subprocess.check_output("git describe --tags --abbrev=0".split(" ")).decode().strip()
 app=FastAPI(title='NyrakonAPI',version=version)
 
-@app.get("/")
+@app.get("/index.html")
 def root():
     return {"STATUS":"OK"}
