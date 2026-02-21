@@ -6,3 +6,4 @@ RewriteRule ^(.*)$ http://127.0.0.1:8000/$1 [P,L]
 # Fix reverse proxy headers
 RequestHeader set X-Forwarded-Proto "http"
 RequestHeader set X-Forwarded-Port "80"
+RequestHeader set X-Forwarded-For "%{REMOTE_ADDR}s"
