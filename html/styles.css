@@ -1,6 +1,6 @@
 html {
-    --primary-color: rgb(5, 255, 176);
-    --secondary: rgb(7, 172, 120);
+    --primary-color: #e4a400;
+    --secondary: rgb(159, 114, 0);
     
     height: 100%;
 }
