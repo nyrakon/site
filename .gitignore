@@ -209,3 +209,5 @@ __marimo__/
 # db
 *.json
 backend/*.txt
+backend/**
+**/backend

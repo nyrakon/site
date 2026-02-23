@@ -1,12 +1,14 @@
 <html>
     <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ramsina&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ramsina&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">    
+        <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     </head>
     <body style="overflow: hidden;">
         <div style="width: 100%; height: 64px; display: flex; flex-direction: row; align-items: left; justify-content: center; overflow:hidden;">
@@ -19,5 +21,17 @@
             <a href="/plans.html" target="_top">Plans</a>
             <a href="/tos.html" target="_top">Terms Of Service</a>
         </div>
+        <div style="position: absolute; margin-top: 1%; right: 0; width: 30%; height: fit-content; display: flex; flex-direction: row; align-items: right; justify-content: space-evenly; overflow:hidden;">
+            <button class="accountmanagementstuff" href="/sign_up.html" target="_top">Register</button>
+            <button class="accountmanagementstuff" href="/login.html" target="_top">Login</button>
+            <button class="pre-existingacc" href="/login.html" target="_top">Sign Out</button>
+        </div>
+        <script>
+            if (document.cookie.includes("session")) { 
+                $(".accountmanagementstuff").hide() // - hide register/login if already logged in
+            } else {
+                $(".pre-existingacc").hide()
+            }
+        </script>
     </body>
 </html>
