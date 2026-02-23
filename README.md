@@ -1,2 +1,2 @@
-# site
-For public website.
+# site EDGE
+Edge version of the public website.
