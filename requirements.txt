@@ -2,3 +2,4 @@ dotenv
 fastapi
 fastapi[standard]
 cryptography
+orjson >= 3.10,<4
