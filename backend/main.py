@@ -15,6 +15,14 @@ settings['device_limit']=int(settings['device_limit'])
 DEVELOPMENT=settings['ENVIRONMENT']=='dev'
 version=subprocess.check_output("git describe --tags --abbrev=0".split(" ")).decode().strip()
 app=FastAPI(title='NyrakonAPI',version=version)
+from fastapi.middleware.cors import CORSMiddleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 errors={
     'unauth':Response(content="", status_code=401, media_type="text/html"),
     'unanswered_sec_que':Response(content="you have unanswered security questions", status_code=401, media_type="text/html"),
