@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Nyrakon – Login</title>
+        <script src="handler.js"></script>
+    </head>
+    <body>
+        <div class="content" style="overflow-y: auto; text-align: center; display: flex; flex-direction: column;">
+            <h1>Login</h1>
+            <p id="errormsg" style="color: red;" hidden>error</p>
+            <p>Account ID</p>
+            <input id="account-id"/>
+            <div style="margin-top: 1%; display: flex; flex-direction: row; justify-content: space-evenly; width: 20%; height: 1%;">
+                <p style="margin: 0;">Security questions</p>
+                <button style="z-index: 9999999;" id="addsecurityquestion">+</button>
+            </div>
+            <ul id="securityquestions" style="width: 10%; margin-right: 5%;">
+                <li id="securityquestionexample" style="display: flex; flex-direction: row; justify-content: space-evenly; margin-bottom: 4%;">
+                    <p>Q:</p><input id="question"><p style="margin-left: 5%;">A:</p><input id="answer">
+                </li>
+            </ul>
+            <button id="submit" style="margin-top: 1%;">submit</button>
+        </div>
+        <script>
+            waitforscripts(()=>{
+                exsq=$("#securityquestionexample")
+                //exsq.hide()
+                exsq.remove()
+
+                $("#addsecurityquestion").on("click",async ()=>{
+                    //alert("clicked")
+                    newsq=exsq.clone()
+                    $("#securityquestions").append(newsq)
+                    newsq.removeAttr("hidden")
+                })
+                $("#submit").on("click",async ()=>{
+                    let accID=$("#account-id").val();
+                    let sq={}
+                    for (let thissq of $("#securityquestions")[0].childNodes) {
+                        thissq=$(thissq)
+                        sq[thissq.find("#question").val()]=thissq.find("#answer").val()
+                    }
+                    try {
+                        const response = await axios.post("https://nyrakon.soon.it/login_secure",{
+                            "account_id": accID,
+                            "security_questions": sq
+                        },{withCredentials: true,validateStatus: () => true });
+                        document.location.href = "/";
+                    } catch(e) {
+                        console.log(e)
+                        $("#errormsg").removeAttr("hidden").text("ERROR: possibly wrong account ID or unanswered security questions?")
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>
