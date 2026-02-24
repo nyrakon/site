@@ -15,23 +15,17 @@
         <img src="favicon.ico" style="user-select: none; -webkit-user-drag: none; -moz-user-select: none; height: 64px; width: 64px; margin-right: 1%;" aria-disabled="true" disabled/>
         <h1 style="color: var(--primary-color); user-select: none; font-family: Archivo Black; size: 64px;"><b>NYRAKON</b></div>
         </div>
+        <hr style="width: 50%;">
+        <div style="margin-bottom: 2%; width: 100%; height: fit-content; display: flex; flex-direction: row; align-items: left; justify-content: space-evenly; overflow:hidden;">
+            <a href="/">Home</a>
+            <a href="/plans.html">Plans</a>
+            <a href="/tos.html">Terms Of Service</a>
+        </div>
+        <div style="position: relative; margin-top: 1%; right: 0; width: 20%; height: fit-content; display: flex; flex-direction: row; align-items: right; justify-content: space-evenly; overflow:hidden;">
+            <button id="registerbtn" class="accountmanagementstuff" href="/sign_up.html">Register</button>
+            <button id="loginbtn" class="accountmanagementstuff" href="/login.html">Login</button>
+            <button id="signoutbtn" class="pre-existingacc" href="/login.html">Sign Out</button>
+        </div>
         <hr>
-        <div style="width: 100%; height: fit-content; display: flex; flex-direction: row; align-items: left; justify-content: space-evenly; overflow:hidden;">
-            <a href="/" target="_top">Home</a>
-            <a href="/plans.html" target="_top">Plans</a>
-            <a href="/tos.html" target="_top">Terms Of Service</a>
-        </div>
-        <div style="position: absolute; margin-top: 1%; right: 0; width: 30%; height: fit-content; display: flex; flex-direction: row; align-items: right; justify-content: space-evenly; overflow:hidden;">
-            <button class="accountmanagementstuff" href="/sign_up.html" target="_top">Register</button>
-            <button class="accountmanagementstuff" href="/login.html" target="_top">Login</button>
-            <button class="pre-existingacc" href="/login.html" target="_top">Sign Out</button>
-        </div>
-        <script>
-            if (document.cookie.includes("session")) { 
-                $(".accountmanagementstuff").hide() // - hide register/login if already logged in
-            } else {
-                $(".pre-existingacc").hide()
-            }
-        </script>
     </body>
 </html>

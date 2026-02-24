@@ -211,3 +211,4 @@ __marimo__/
 backend/*.txt
 backend/**
 **/backend
+**/backend/*

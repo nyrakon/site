@@ -26,3 +26,7 @@ a {
 .topbar {
     width: 100%; height: fit-content; overflow: hidden;
 }
+
+hr {
+    color: black;
+}
